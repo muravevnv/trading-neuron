@@ -1,0 +1,119 @@
+.instruments {
+
+  background-color: var(--dark);
+  color: var(--white);
+
+  &__title {
+    text-align: center;
+    margin-bottom: 8px;
+
+    @include media(sm) {
+      text-align: left;
+    }
+  }
+
+  &__text {
+
+    text-align: center;
+    font-size: 24px;
+    line-height: 34px;
+    color: var(--grey);
+    margin-bottom: 40px;
+
+    @include media(sm) {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: left;
+      margin-bottom: 24px;
+
+    }
+  }
+
+  &-slider {
+
+    overflow: hidden;
+
+    @include media(lg) {
+      width: calc(100% + 40px);
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+
+    @include media(sm) {
+      width: calc(100% + 36px);
+      margin: 0 -18px;
+      padding: 0 18px;
+    }
+  }
+}
+
+
+
+.instruments-item {
+  position: relative;
+  background: linear-gradient(144.45deg, #505052 0%, #151515 100%);
+  border-radius: 4px;
+  height: auto;
+  padding-top: 200px;
+  overflow: hidden;
+
+  @include media(lg) {
+    max-width: 279px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  &__info {
+    padding: 16px;
+
+    background: linear-gradient(95.29deg, rgba(127, 127, 127, 0.45) 0%, #000000 100%);
+    backdrop-filter: blur(6px);
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    height: 100%;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
+  &__desc {
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey);
+  }
+
+  &__link {
+    margin: auto 0 0 0;
+    font-size: 20px;
+    line-height: 28px;
+    text-transform: uppercase;
+    color: var(--grey);
+    display: inline-flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    svg {
+      display: block;
+      margin-left: 16px;
+    }
+  }
+}

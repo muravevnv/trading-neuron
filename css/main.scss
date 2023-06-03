@@ -1,0 +1,36 @@
+// Конфиг
+
+@import 'config/variables';
+@import 'config/mixins';
+@import 'config/fonts';
+@import 'config/base';
+@import 'config/typography';
+@import 'config/form';
+
+// Компоненты
+
+@import 'components/btn';
+@import 'components/header';
+@import 'components/footer';
+@import 'components/section';
+@import 'components/modal';
+
+
+//Разделы
+
+@import 'sections/hero';
+@import 'sections/services';
+@import 'sections/advantages';
+@import 'sections/utp';
+@import 'sections/compet';
+@import 'sections/opportunities';
+@import 'sections/instruments';
+@import 'sections/tariffs';
+@import 'sections/request';
+@import 'sections/steps';
+@import 'sections/calculation';
+
+
+
+
+

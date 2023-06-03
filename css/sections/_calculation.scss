@@ -1,0 +1,145 @@
+.calculation {
+  background-color: #43434E;
+  color: var(--white);
+  padding: 56px 0;
+  overflow: hidden;
+
+  @include media(sm) {
+    padding: 24px 0;
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 66px;
+
+    @include media(sm) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__desc {
+    max-width: 852px;
+    margin: 40px auto 0;
+    font-size: 20px;
+    line-height: 28px;
+    color: var(--grey);
+
+    @include media(sm) {
+      font-size: 16px;
+      line-height: 24px;
+      margin-top: 24px;
+    }
+  }
+}
+
+.calculation-params {
+  max-width: 855px;
+  margin: 0 auto 40px;
+
+  @include media(sm) {
+    margin-bottom: 24px;
+  }
+
+  &__item {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+    color: var(--grey);
+
+    @include media(sm) {
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+
+  &__value {
+    padding-right: 57px;
+    position: relative;
+
+    @include media(sm) {
+      width: 103px;
+      text-align: right;
+      padding-right: 32px;
+      flex-shrink: 0;
+    }
+
+    span {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.calculation-slider {
+ 
+}
+
+.calculation-item {
+  max-width: 440px;
+  width: 100%;
+  flex-shrink: initial;
+
+  @media(max-width: 1200px) {
+    flex-shrink: 0;
+    max-width: 360px;
+  }
+
+  @include media(sm) {
+    max-width: 279px;
+  }
+  
+  &:nth-of-type(2) {
+    margin: 60px 0 0 -155px; 
+    @media(max-width: 1200px) {
+      margin: 0;
+    }
+  }
+  &:nth-of-type(3) {
+    margin: 120px 0 0 -155px; 
+    @media(max-width: 1200px) {
+      margin: 0;
+    }
+  }
+  &:nth-of-type(4) {
+    margin: 180px 0 0 -155px; 
+
+    @media(max-width: 1200px) {
+      margin: 0;
+    }
+  }
+
+  &__img {
+    max-width: 100%;
+  }
+
+  &__table {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 250px;
+    margin-top: 14px;
+
+    @include media(sm) {
+      max-width: 100%;
+    }
+
+    &-cell {
+      width: 33.33333%;
+      font-size: 11px;
+      padding: 4px;
+      border: 1px solid var(--grey);
+      color: var(--grey);
+      text-align: center;
+
+      &.bg-pink {
+        background-color: #FFC7CE;
+        color: var(--black);
+      }
+
+      &.bg-green {
+        background-color: #C6EFCE;
+        color: var(--black);
+      }
+    }
+  }
+}

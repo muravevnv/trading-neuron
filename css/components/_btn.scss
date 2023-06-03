@@ -1,0 +1,27 @@
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  width: auto;
+  padding: 7px 23px;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  color: var(--white);
+  font-family: 'Jost', sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color .3s, color .3s, border-color .3s;
+
+  &--outline {
+    background: transparent;
+    color: var(--white);
+  }
+
+  &:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+    transition: background-color .3s, color .3s, border-color .3s;
+  }
+}

@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Jost', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--black);
+  background-color: var(--grey-dark);
+  color: var(--grey);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &.is-fixed {
+    overflow: hidden;
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1336px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+
+  @include media(sm) {
+    padding: 0 18px;
+  }
+
+  &--md  {
+    max-width: 1118px;
+  }
+}
+
+select {
+  display: none;
+}
+
+.mob-hidden {
+  @media(max-width: 767px) {
+    display: none;
+  }
+}
+
+.desc-hidden {
+  display: none;
+
+  @media(max-width: 767px) {
+    display: inline-block;
+  }
+}
+
+
+
+.page {
+  padding: 64px 0 120px;
+
+  @include media(sm) {
+    padding: 32px 0 64px;
+  }
+  
+  &-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+
+    @include media(sm) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    svg {
+      flex-shrink: 0;
+      cursor: pointer;
+
+      @include media(md)  {
+        display: none;
+      }
+    }
+  }
+
+  &__back {
+    display: none;
+
+    @include media(sm) {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      color: var(--primary);
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+  }
+
+  &-tabs {
+    max-width: 365px;
+    width: 100%;
+
+    @include media(sm) {
+      max-width: 100%;
+      width: 100%;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 0;
+      border: none;
+      border-top: 1px solid var(--border-grey);
+    }
+  }
+}
+
+.box {
+  padding: 39px;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--border-grey);
+
+  @include media(md) {
+    padding: 23px;
+  }
+
+  @include media(sm) {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  + .box {
+    margin-top: 16px;
+  }
+}

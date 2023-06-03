@@ -1,0 +1,8 @@
+.section {
+
+  padding: 56px 0 80px;
+
+  @include media(sm) {
+    padding: 24px 0;
+  }
+}
