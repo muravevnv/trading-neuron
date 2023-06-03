@@ -959,6 +959,7 @@ h2 {
   font-size: 24px;
   line-height: 35px;
   margin-top: 8px;
+  color: var(--black);
 }
 @media (max-width: 1023px) {
   .hero__text {
