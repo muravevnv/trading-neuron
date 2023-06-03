@@ -50,7 +50,7 @@ for (let anchor of anchors) {
 let modal = document.querySelector('.modal');
 let modalCloseBtn = document.querySelector('.modal-overlay');
 let modalOverlay = document.querySelector('.modal-close');
-
+let body = document.querySelector('body')
 let modalBtn = document.querySelectorAll('.js-open-modal');
 
 function showModal(){
