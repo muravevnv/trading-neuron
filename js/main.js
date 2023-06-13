@@ -37,6 +37,9 @@ const anchors = document.querySelectorAll('a[href*="#"]')
 for (let anchor of anchors) {
   anchor.addEventListener('click', function (e) {
     e.preventDefault()
+    burger.classList.toggle('is-active')
+    menu.classList.toggle('is-open')
+  
     
     const blockID = anchor.getAttribute('href').substr(1)
     
@@ -47,32 +50,32 @@ for (let anchor of anchors) {
   })
 }
 
-let modal = document.querySelector('.modal');
-let modalCloseBtn = document.querySelector('.modal-overlay');
-let modalOverlay = document.querySelector('.modal-close');
-let body = document.querySelector('body')
-let modalBtn = document.querySelectorAll('.js-open-modal');
+// let modal = document.querySelector('.modal');
+// let modalCloseBtn = document.querySelector('.modal-overlay');
+// let modalOverlay = document.querySelector('.modal-close');
+// let body = document.querySelector('body')
+// let modalBtn = document.querySelectorAll('.js-open-modal');
 
-function showModal(){
-  modal.classList.add('is-open');
-  body.classList.add('is-fixed')
-}
+// function showModal(){
+//   modal.classList.add('is-open');
+//   body.classList.add('is-fixed')
+// }
 
-function closeModal() {
-  modal.classList.remove('is-open');
-  body.classList.remove('is-fixed')
-}
+// function closeModal() {
+//   modal.classList.remove('is-open');
+//   body.classList.remove('is-fixed')
+// }
 
-modalBtn.forEach(function(item){
-  item.addEventListener('click', showModal)
-})
+// modalBtn.forEach(function(item){
+//   item.addEventListener('click', showModal)
+// })
 
-document.addEventListener('click', function(event){
-  let target = event.target;
-  if(target == modalCloseBtn || target == modalOverlay) {
-    closeModal();
-  }
-})
+// document.addEventListener('click', function(event){
+//   let target = event.target;
+//   if(target == modalCloseBtn || target == modalOverlay) {
+//     closeModal();
+//   }
+// })
 
 let burger = document.querySelector('.header-burger');
 let menu = document.querySelector('.header-menu');
@@ -128,3 +131,39 @@ burger.addEventListener('click', function() {
     scrollBtn.addEventListener('click', function(){
       window.scrollTo({ top: 0, behavior: 'smooth' });
     })
+
+    var modalButtons = document.querySelectorAll(".js-open-modal"),
+  overlay = document.querySelectorAll(".modal-overlay"),
+  closeButtons = document.querySelectorAll(".modal-close");
+
+
+modalButtons.forEach(function (item) {
+  
+  item.addEventListener("click", function (e) {
+
+    e.preventDefault();
+
+    var modalId = this.getAttribute("data-modal"),
+      modalElem = document.querySelector(
+        '.modal[data-modal="' + modalId + '"]'
+      );
+
+    modalElem.classList.add("is-open");
+  }); 
+}); 
+
+closeButtons.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    var parentModal = this.closest(".modal");
+    parentModal.classList.remove("is-open");
+
+  });
+}); 
+
+overlay.forEach(function (item) {
+  item.addEventListener("click", function (e) {
+    var parentModal = this.closest(".modal");
+    parentModal.classList.remove("is-open");
+
+  });
+}); 

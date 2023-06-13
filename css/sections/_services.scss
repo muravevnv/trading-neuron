@@ -68,9 +68,10 @@
     margin-left: -112px;
     padding: 16px 24px 16px 40px;
     background: var(--gradient-dark);
-    backdrop-filter: blur(6px);
+    // backdrop-filter: blur(6px);
     display: flex;
     align-items: center;
+    font-weight: 400;
     font-size: 20px;
     line-height: 28px;
     letter-spacing: .2rem;
@@ -81,6 +82,7 @@
       padding: 8px;
       font-size: 16px;
       line-height: 24px;
+      letter-spacing: 0px;
     }
   }
 }

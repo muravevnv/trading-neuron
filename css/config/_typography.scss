@@ -1,7 +1,8 @@
 h1 {
-  font-size: 42px;
+  font-size: 56px;
   line-height: 60px;
   letter-spacing: .1rem;
+  font-weight: 500;
 
   @include media(md) {
     font-size: 26px;
@@ -10,9 +11,10 @@ h1 {
 }
 
 h2 {
-  font-size: 28px;
-  line-height: 40px;
+  font-size: 42px;
+  line-height: 50px;
   letter-spacing: .1rem;
+  font-weight: 400;
 
   @include media(md) {
     font-size: 23px;

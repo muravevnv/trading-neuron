@@ -106,14 +106,21 @@
     color: var(--grey);
     display: inline-flex;
     align-items: center;
+    transition: .3s;
 
     &:hover {
-      text-decoration: underline;
+      transition: .3s;
+      svg {
+        transform: translateX(5px);
+        transition: .3s;
+      }
     }
 
     svg {
       display: block;
       margin-left: 16px;
+      transform: translateX(0px);
+      transition: .3s;
     }
   }
 }
