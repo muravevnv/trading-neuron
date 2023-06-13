@@ -58,6 +58,10 @@ main {
   flex: 1;
 }
 
+img {
+  pointer-events: none;
+}
+
 .container {
   max-width: 1336px;
   width: 100%;
