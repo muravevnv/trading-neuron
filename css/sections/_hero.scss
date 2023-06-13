@@ -24,6 +24,10 @@
   .container {
     position: relative;
     z-index: 2;
+
+    @include media(sm) {
+      padding: 0 8px;
+    }
   }
 
   &-wrap {
@@ -32,14 +36,24 @@
     top: 0;
     right: 0;
     left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @media(max-width: 1920px) {
+      top: 0;
+      transform: translateY(0);
+    }
   
     @include media(md) {
       padding: 120px 0 40px;
     }
-  
-    @include media(xs) {
-      padding: 145px 0 16px;
+
+    @include media(sm) {
+      padding: 0;
+      top: auto;
+      bottom: 20px;
     }
+
   }
 
   &__title {
@@ -57,7 +71,7 @@
       display: block;
 
       &:last-of-type {
-        padding-left: 80px;
+        padding-left: 100px;
 
         @include media(sm)  {
           padding-left: 24px;
