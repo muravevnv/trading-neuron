@@ -1,0 +1,166 @@
+.coockie-policy {
+  font-family: 'Helvetica Neue', sans-serif !important;
+  color: var(--white);
+  background-color: #000;
+  padding: 30px 0;
+  color: #ccc;
+  
+  .container {
+    max-width: 1220px;
+  }
+
+  h1 {
+    font-size: 50px;
+    line-height: 1;
+    font-weight: 900;
+    margin: 30px 0;
+    color: #FFF;
+  }
+
+  &__box {
+    padding: 10px 30px;
+    background-color: #545454;
+    margin-bottom: 24px;
+
+    &-text {
+      font-size: 18px;
+      line-height: 24px;
+      margin-bottom: 16px;
+      font-weight: 200;
+      color: #CCC;
+    }
+
+    &-btn {
+      display: inline-block;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+      margin-bottom: 24px;
+      font-size: .8888888889rem;
+    font-weight: 900;
+    background-color: #ee7f00;
+    color: #fff;
+    font-weight: 900;
+    padding: .525rem 1rem;
+    
+    }
+  }
+
+  h2 {
+    margin: 30px 0 16px;
+    font-weight: 200;
+    color: #FFF;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 16px;
+    font-weight: 200;
+  }
+
+  &-wrap {
+    padding: 48px 48px 0 48px;
+
+    @include media(md) {
+      padding-top: 0;
+    }
+  }
+
+  &__item {
+    margin: 96px 0;
+
+    @include media(md) {
+      margin: 72px 0;
+    }
+
+    &-title {
+      margin-bottom: 0;
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    &-info {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 200;
+
+
+      &::before {
+        display: inline-flex;
+        content: url('../images/checkmark.svg');
+        width: 18px;
+        height: 18px;
+        margin-right: 16px;
+        position: relative;
+        top: 2px;
+      }
+    }
+
+    &-checkbox {
+      position: relative;
+
+      input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        
+
+        &:checked + label {
+          background-color: #ee7f00;
+          transition: .4s;
+
+          &::before {
+            left: auto;
+            transform: translateX(30px);
+            transition: .4s;
+          }
+        }
+
+        &:disabled {
+          + label {
+            background-color: #c99c69 !important;
+          cursor: not-allowed !important;
+          }
+        }
+      }
+
+      label {
+        position: relative;
+        display: block;
+        width: 60px;
+        height: 34px;
+        background-color: #ccc;
+        transition: .4s;
+        cursor: pointer;
+
+        &::before {
+          position: absolute;
+          display: block;
+          content: "";
+          height: 26px;
+          width: 26px;
+          left: 4px;
+          bottom: 4px;
+          background-color: #fff;
+          transform: translateX(0);
+          transition: .4s;
+        }
+      }
+    }
+  }
+}
