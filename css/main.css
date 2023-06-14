@@ -282,6 +282,11 @@ select {
   border-color: #ee7f00;
   color: #ee7f00;
 }
+@media (max-width: 420px) {
+  .coockie-bottom .btn {
+    font-size: 12px;
+  }
+}
 .coockie-panel {
   background-color: #000;
   padding: 1rem 0;

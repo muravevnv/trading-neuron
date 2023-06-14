@@ -251,6 +251,10 @@ select {
         border-color: #ee7f00;
         color: #ee7f00;
       }
+
+      @media(max-width: 420px) {
+        font-size: 12px;
+      }
     }
 
   }
