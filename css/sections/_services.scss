@@ -74,15 +74,20 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 28px;
-    letter-spacing: .2rem;
 
     @include media(sm) {
       width: 100%;
       margin: -50px 0 0 0;
       padding: 8px;
-      font-size: 16px;
-      line-height: 24px;
       letter-spacing: 0px;
     }
+  }
+
+  &__text {
+    width: calc(100% - 50px);
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 400;
+    color: #E2E2E2;
   }
 }

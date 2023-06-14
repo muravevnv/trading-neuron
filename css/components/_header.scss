@@ -114,6 +114,12 @@
     color: var(--white);
     margin-right: 56px;
     transition: color .3s;
+    font-size: 20px;
+    line-height: 28px;
+
+    @include media(lg) {
+      margin-right: 24px;
+    }
 
     @include media(md) {
       margin: 0 0 24px 0;

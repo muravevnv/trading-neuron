@@ -80,6 +80,10 @@
   width: 100%;
   flex-shrink: initial;
 
+  a {
+    display: block;
+  }
+
   @media(max-width: 1200px) {
     flex-shrink: 0;
     max-width: 360px;

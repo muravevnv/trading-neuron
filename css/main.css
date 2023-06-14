@@ -751,6 +751,13 @@ h2 {
   color: var(--white);
   margin-right: 56px;
   transition: color 0.3s;
+  font-size: 20px;
+  line-height: 28px;
+}
+@media (max-width: 1200px) {
+  .header-nav__item {
+    margin-right: 24px;
+  }
 }
 @media (max-width: 1023px) {
   .header-nav__item {
@@ -1295,17 +1302,21 @@ h2 {
   font-weight: 400;
   font-size: 20px;
   line-height: 28px;
-  letter-spacing: 0.2rem;
 }
 @media (max-width: 767px) {
   .services-item__info {
     width: 100%;
     margin: -50px 0 0 0;
     padding: 8px;
-    font-size: 16px;
-    line-height: 24px;
     letter-spacing: 0px;
   }
+}
+.services-item__text {
+  width: calc(100% - 50px);
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 400;
+  color: #E2E2E2;
 }
 
 .advantages {
@@ -1391,17 +1402,43 @@ h2 {
 }
 
 .utp {
-  background: url("../images/utp-bg.png") top left/cover no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+.utp-bg {
+  width: 100%;
+  min-height: 450px;
+}
+.utp-bg img {
+  width: 100%;
+  min-height: 450px;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.utp-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 90px 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 @media (max-width: 1023px) {
-  .utp {
+  .utp-wrapper {
     padding: 64px 0;
   }
 }
 @media (max-width: 560px) {
-  .utp {
-    padding: 98px 0 16px;
+  .utp-wrapper {
+    padding: 0;
+    top: auto;
+    transform: translateX(0);
+    bottom: 24px;
   }
 }
 .utp .container {
@@ -1422,10 +1459,27 @@ h2 {
     max-width: 100%;
   }
 }
+.utp__title {
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .utp__title {
+    font-size: 26px;
+    line-height: 37px;
+    margin-bottom: 8px;
+  }
+}
 .utp__text {
   margin-top: 24px;
   font-size: 20px;
   line-height: 28px;
+}
+@media (max-width: 767px) {
+  .utp__text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 8px;
+  }
 }
 .utp__btn {
   margin-top: 24px;
@@ -1474,7 +1528,7 @@ h2 {
 }
 .compet-item:hover {
   transition: 0.3s;
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
 }
 @media (max-width: 767px) {
   .compet-item {
@@ -1974,7 +2028,7 @@ h2 {
 }
 .steps-img {
   position: absolute;
-  right: -150px;
+  right: 0px;
   bottom: 60px;
   z-index: 2;
 }
@@ -2117,6 +2171,9 @@ h2 {
   max-width: 440px;
   width: 100%;
   flex-shrink: initial;
+}
+.calculation-item a {
+  display: block;
 }
 @media (max-width: 1200px) {
   .calculation-item {
