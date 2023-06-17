@@ -74,10 +74,13 @@
   }
 
   &__item {
-    margin: 96px 0;
+    margin: 48px 0;
+    padding-bottom: 48px;
+    border-bottom: 1px solid grey;
 
     @include media(md) {
-      margin: 72px 0;
+      margin: 32px 0;
+      padding-bottom: 32px;
     }
 
     &-title {

@@ -72,6 +72,15 @@
       width: 100%;
       display: block;
     }
+
+    &:hover {
+
+      + .instruments-item__info .instruments-item__link {
+        &::before {
+          opacity: 1;
+        }
+      }
+    }
   }
 
   &__info {
@@ -105,8 +114,20 @@
     text-transform: uppercase;
     color: var(--grey);
     display: inline-flex;
+    width: auto;
     align-items: center;
     transition: .3s;
+    position: relative;
+
+    // &::before {
+    //   display: block;
+
+    //   position: absolute;
+    //   content: '';
+    //   width: 279px;
+    //   height: 100%;
+    //   background: radial-gradient(50% 50% at 50% 50%, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+    // }
 
     &:hover {
       transition: .3s;

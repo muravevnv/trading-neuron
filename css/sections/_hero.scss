@@ -71,7 +71,11 @@
       display: block;
 
       &:last-of-type {
-        padding-left: 100px;
+        padding-left: 150px;
+
+        @include media(md) {
+          padding-left: 100px;
+        }
 
         @include media(sm)  {
           padding-left: 24px;
