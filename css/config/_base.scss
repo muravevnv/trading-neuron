@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 106px;
+  scroll-behavior: smooth;
 
   @include media(md) {
     padding-top: 63px;
