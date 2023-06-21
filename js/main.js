@@ -75,10 +75,6 @@ Fancybox.bind("[data-fancybox]", {
       document.body.addEventListener('click', this.delegateAnchors.bind(this));
     },
 
-    /**
-     * Return the offset amount to deduct from the normal scroll position.
-     * Modify as appropriate to allow for dynamic calculations
-     */
     getFixedOffset: function() {
       return this.OFFSET_HEIGHT_PX;
     },
@@ -112,16 +108,12 @@ Fancybox.bind("[data-fancybox]", {
       return !!match;
     },
 
-    /**
-     * Attempt to scroll to the current location's hash.
-     */
+
     scrollToCurrent: function() {
       this.scrollIfAnchor(window.location.hash);
     },
 
-    /**
-     * If the click event's target was an anchor, fix the scroll position.
-     */
+
     delegateAnchors: function(e) {
       var elem = e.target;
 
@@ -139,13 +131,13 @@ Fancybox.bind("[data-fancybox]", {
   );
 })(window.document, window.history, window.location);
 
+
 let burger = document.querySelector('.header-burger');
 let menu = document.querySelector('.header-menu');
 
 function toggleMenu() {
   menu.classList.toggle('is-open')
 }
-
 
 burger.addEventListener('click', function() {
   this.classList.toggle('is-active');
