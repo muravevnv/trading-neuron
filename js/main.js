@@ -72,10 +72,8 @@ var links = document.querySelectorAll('[href^="#"]');
 
 for (var i = 0; i < links.length; i++) {
   links[i].addEventListener('click', function(e) {
-    var el = document.querySelector(this.hash);
-
     if(mainPage.classList.contains('main-page')) {
-      e.preventDefault() 
+      
       burger.classList.remove('is-active')
       menu.classList.remove('is-open')
 
@@ -83,12 +81,7 @@ for (var i = 0; i < links.length; i++) {
 
         return
       }
-
-    if (el) {
-      window.scrollTo(0, el.getBoundingClientRect().top - 20);
-    }
-    e.preventDefault();
-  }, false);
+  });
 }
 
 let burger = document.querySelector('.header-burger');
