@@ -3,6 +3,12 @@
   background-color: var(--dark);
   color: var(--white);
 
+  scroll-margin-top: 100px;
+
+  @include media(sm) {
+    scroll-margin-top: 50px;
+  }
+
   &__title {
     text-align: center;
     margin-bottom: 8px;

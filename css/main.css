@@ -51,6 +51,7 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 106px;
+  scroll-behavior: smooth;
   -moz-user-select: none;
   -webkit-user-select: none;
           user-select: none;
@@ -1244,6 +1245,12 @@ h2 {
 .services {
   background-color: var(--grey-dark);
   color: var(--white);
+  scroll-margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .services {
+    scroll-margin-top: 50px;
+  }
 }
 .services__title {
   margin-bottom: 24px;
@@ -1705,6 +1712,12 @@ h2 {
 .instruments {
   background-color: var(--dark);
   color: var(--white);
+  scroll-margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .instruments {
+    scroll-margin-top: 50px;
+  }
 }
 .instruments__title {
   text-align: center;
@@ -1825,6 +1838,12 @@ h2 {
 .tariffs {
   background-color: #2a2939;
   color: var(--white);
+  scroll-margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .tariffs {
+    scroll-margin-top: 50px;
+  }
 }
 .tariffs__title {
   margin-bottom: 44px;
@@ -1947,6 +1966,12 @@ h2 {
   background-color: #1c1c27;
   padding: 40px 0 80px;
   color: var(--white);
+  scroll-margin-top: 100px;
+}
+@media (max-width: 767px) {
+  .request {
+    scroll-margin-top: 50px;
+  }
 }
 @media (max-width: 767px) {
   .request {

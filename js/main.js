@@ -32,104 +32,104 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
-// const anchors = document.querySelectorAll('a[href*="#"]')
-// const header = document.querySelector('.header')
+const anchors = document.querySelectorAll('a[href*="#"]')
+const header = document.querySelector('.header')
 
-// for (let anchor of anchors) {
-//     anchor.addEventListener('click', function (e) {
-//     e.preventDefault()
-//     burger.classList.toggle('is-active')
-//     menu.classList.toggle('is-open')
+for (let anchor of anchors) {
+    anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    burger.classList.remove('is-active')
+    menu.classList.remove('is-open')
 
-//     let yourHeight = header.offsetHeight;
-//     console.log(yourHeight)
+    let yourHeight = header.offsetHeight;
+    console.log(yourHeight)
 
-//     const blockID = anchor.getAttribute('href').substr(1)
+    const blockID = anchor.getAttribute('href').substr(1)
 
-//     document.getElementById(blockID).scrollIntoView({
-//       behavior: 'smooth',
-//       block: 'start'
-//     })
+    document.getElementById(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
     
-//     var scrolledY = window.screenY;
+    var scrolledY = window.screenY;
 
-//     if(scrolledY) {
-//       window.scroll(0, scrolledY - yourHeight)
-//     }
-//   })
-// }
-
-(function(document, history, location) {
-  var HISTORY_SUPPORT = !!(history && history.pushState);
-
-  var anchorScrolls = {
-    ANCHOR_REGEX: /^#[^ ]+$/,
-    OFFSET_HEIGHT_PX: 50,
-
-    /**
-     * Establish events, and fix initial scroll position if a hash is provided.
-     */
-    init: function() {
-      this.scrollToCurrent();
-      window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
-      document.body.addEventListener('click', this.delegateAnchors.bind(this));
-    },
-
-    getFixedOffset: function() {
-      return this.OFFSET_HEIGHT_PX;
-    },
-
-    /**
-     * If the provided href is an anchor which resolves to an element on the
-     * page, scroll to it.
-     * @param  {String} href
-     * @return {Boolean} - Was the href an anchor.
-     */
-    scrollIfAnchor: function(href, pushToHistory) {
-      var match, rect, anchorOffset;
-
-      if(!this.ANCHOR_REGEX.test(href)) {
-        return false;
-      }
-
-      match = document.getElementById(href.slice(1));
-
-      if(match) {
-        rect = match.getBoundingClientRect();
-        anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
-        window.scrollTo(window.pageXOffset, anchorOffset);
-
-        // Add the state to history as-per normal anchor links
-        if(HISTORY_SUPPORT && pushToHistory) {
-          history.pushState({}, document.title, location.pathname + href);
-        }
-      }
-
-      return !!match;
-    },
-
-
-    scrollToCurrent: function() {
-      this.scrollIfAnchor(window.location.hash);
-    },
-
-
-    delegateAnchors: function(e) {
-      var elem = e.target;
-
-      if(
-        elem.nodeName === 'A' &&
-        this.scrollIfAnchor(elem.getAttribute('href'), true)
-      ) {
-        e.preventDefault();
-      }
+    if(scrolledY) {
+      window.scroll(0, scrolledY - yourHeight)
     }
-  };
+  })
+}
 
-  window.addEventListener(
-    'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
-  );
-})(window.document, window.history, window.location);
+// (function(document, history, location) {
+//   var HISTORY_SUPPORT = !!(history && history.pushState);
+
+//   var anchorScrolls = {
+//     ANCHOR_REGEX: /^#[^ ]+$/,
+//     OFFSET_HEIGHT_PX: 50,
+
+//     /**
+//      * Establish events, and fix initial scroll position if a hash is provided.
+//      */
+//     init: function() {
+//       this.scrollToCurrent();
+//       window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
+//       document.body.addEventListener('click', this.delegateAnchors.bind(this));
+//     },
+
+//     getFixedOffset: function() {
+//       return this.OFFSET_HEIGHT_PX;
+//     },
+
+//     /**
+//      * If the provided href is an anchor which resolves to an element on the
+//      * page, scroll to it.
+//      * @param  {String} href
+//      * @return {Boolean} - Was the href an anchor.
+//      */
+//     scrollIfAnchor: function(href, pushToHistory) {
+//       var match, rect, anchorOffset;
+
+//       if(!this.ANCHOR_REGEX.test(href)) {
+//         return false;
+//       }
+
+//       match = document.getElementById(href.slice(1));
+
+//       if(match) {
+//         rect = match.getBoundingClientRect();
+//         anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
+//         window.scrollTo(window.pageXOffset, anchorOffset);
+
+//         // Add the state to history as-per normal anchor links
+//         if(HISTORY_SUPPORT && pushToHistory) {
+//           history.pushState({}, document.title, location.pathname + href);
+//         }
+//       }
+
+//       return !!match;
+//     },
+
+
+//     scrollToCurrent: function() {
+//       this.scrollIfAnchor(window.location.hash);
+//     },
+
+
+//     delegateAnchors: function(e) {
+//       var elem = e.target;
+
+//       if(
+//         elem.nodeName === 'A' &&
+//         this.scrollIfAnchor(elem.getAttribute('href'), true)
+//       ) {
+//         e.preventDefault();
+//       }
+//     }
+//   };
+
+//   window.addEventListener(
+//     'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
+//   );
+// })(window.document, window.history, window.location);
 
 
 let burger = document.querySelector('.header-burger');
@@ -146,19 +146,19 @@ burger.addEventListener('click', function() {
 
 
 
-    let scrollBtn = document.querySelector('.scroll-top');
+  let scrollBtn = document.querySelector('.scroll-top');
 
-    document.addEventListener('scroll', function(){
-      if(window.pageYOffset > 700) {
-        scrollBtn.classList.add('is-visible')
-      } else {
-        scrollBtn.classList.remove('is-visible');
-      }
-    })
+  document.addEventListener('scroll', function(){
+    if(window.pageYOffset > 700) {
+      scrollBtn.classList.add('is-visible')
+    } else {
+      scrollBtn.classList.remove('is-visible');
+    }
+  })
 
-    scrollBtn.addEventListener('click', function(){
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    })
+  scrollBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  })
 
   var modalButtons = document.querySelectorAll(".js-open-modal"),
   overlay = document.querySelectorAll(".modal-overlay"),

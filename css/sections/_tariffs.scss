@@ -1,6 +1,11 @@
 .tariffs {
   background-color: #2a2939;
   color: var(--white);
+  scroll-margin-top: 100px;
+
+  @include media(sm) {
+    scroll-margin-top: 50px;
+  }
 
   &__title {
     margin-bottom: 44px;
