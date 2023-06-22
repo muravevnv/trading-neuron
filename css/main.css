@@ -38,6 +38,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   box-sizing: border-box;
   margin: 0;
@@ -51,7 +55,6 @@ body {
   display: flex;
   flex-direction: column;
   padding-top: 106px;
-  scroll-behavior: smooth;
   -moz-user-select: none;
   -webkit-user-select: none;
           user-select: none;

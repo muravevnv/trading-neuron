@@ -32,111 +32,64 @@ Fancybox.bind("[data-fancybox]", {
   // Your custom options
 });
 
-const anchors = document.querySelectorAll('a[href*="#"]')
-const header = document.querySelector('.header');
+// const anchors = document.querySelectorAll('a[href*="#"]')
+// const header = document.querySelector('.header');
+
+
+// for (let anchor of anchors) {
+//     anchor.addEventListener('click', function (e) {
+//     burger.classList.remove('is-active')
+//     menu.classList.remove('is-open')
+
+//     if(mainPage.classList.contains('main-page')) {
+//       e.preventDefault() 
+//     } else {
+//       return
+//     }
+
+//     let yourHeight = header.offsetHeight;
+//     console.log(yourHeight)
+
+//     const blockID = anchor.getAttribute('href').substr(1)
+
+//     document.getElementById(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+    
+//     var scrolledY = window.screenY;
+
+//     if(scrolledY) {
+//       window.scroll(0, scrolledY - yourHeight)
+//     }
+//   })
+// }
+
+
 let mainPage = document.querySelector('body');
 
-for (let anchor of anchors) {
-    anchor.addEventListener('click', function (e) {
-    burger.classList.remove('is-active')
-    menu.classList.remove('is-open')
+var links = document.querySelectorAll('[href^="#"]');
+
+for (var i = 0; i < links.length; i++) {
+  links[i].addEventListener('click', function(e) {
+    var el = document.querySelector(this.hash);
 
     if(mainPage.classList.contains('main-page')) {
       e.preventDefault() 
-    } else {
-      return
+      burger.classList.remove('is-active')
+      menu.classList.remove('is-open')
+
+      } else {
+
+        return
+      }
+
+    if (el) {
+      window.scrollTo(0, el.getBoundingClientRect().top - 20);
     }
-
-    let yourHeight = header.offsetHeight;
-    console.log(yourHeight)
-
-    const blockID = anchor.getAttribute('href').substr(1)
-
-    document.getElementById(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-    
-    var scrolledY = window.screenY;
-
-    if(scrolledY) {
-      window.scroll(0, scrolledY - yourHeight)
-    }
-  })
+    e.preventDefault();
+  }, false);
 }
-
-// (function(document, history, location) {
-//   var HISTORY_SUPPORT = !!(history && history.pushState);
-
-//   var anchorScrolls = {
-//     ANCHOR_REGEX: /^#[^ ]+$/,
-//     OFFSET_HEIGHT_PX: 50,
-
-//     /**
-//      * Establish events, and fix initial scroll position if a hash is provided.
-//      */
-//     init: function() {
-//       this.scrollToCurrent();
-//       window.addEventListener('hashchange', this.scrollToCurrent.bind(this));
-//       document.body.addEventListener('click', this.delegateAnchors.bind(this));
-//     },
-
-//     getFixedOffset: function() {
-//       return this.OFFSET_HEIGHT_PX;
-//     },
-
-//     /**
-//      * If the provided href is an anchor which resolves to an element on the
-//      * page, scroll to it.
-//      * @param  {String} href
-//      * @return {Boolean} - Was the href an anchor.
-//      */
-//     scrollIfAnchor: function(href, pushToHistory) {
-//       var match, rect, anchorOffset;
-
-//       if(!this.ANCHOR_REGEX.test(href)) {
-//         return false;
-//       }
-
-//       match = document.getElementById(href.slice(1));
-
-//       if(match) {
-//         rect = match.getBoundingClientRect();
-//         anchorOffset = window.pageYOffset + rect.top - this.getFixedOffset();
-//         window.scrollTo(window.pageXOffset, anchorOffset);
-
-//         // Add the state to history as-per normal anchor links
-//         if(HISTORY_SUPPORT && pushToHistory) {
-//           history.pushState({}, document.title, location.pathname + href);
-//         }
-//       }
-
-//       return !!match;
-//     },
-
-
-//     scrollToCurrent: function() {
-//       this.scrollIfAnchor(window.location.hash);
-//     },
-
-
-//     delegateAnchors: function(e) {
-//       var elem = e.target;
-
-//       if(
-//         elem.nodeName === 'A' &&
-//         this.scrollIfAnchor(elem.getAttribute('href'), true)
-//       ) {
-//         e.preventDefault();
-//       }
-//     }
-//   };
-
-//   window.addEventListener(
-//     'DOMContentLoaded', anchorScrolls.init.bind(anchorScrolls)
-//   );
-// })(window.document, window.history, window.location);
-
 
 let burger = document.querySelector('.header-burger');
 let menu = document.querySelector('.header-menu');
