@@ -33,13 +33,19 @@ Fancybox.bind("[data-fancybox]", {
 });
 
 const anchors = document.querySelectorAll('a[href*="#"]')
-const header = document.querySelector('.header')
+const header = document.querySelector('.header');
+let mainPage = document.querySelector('body');
 
 for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
-
     burger.classList.remove('is-active')
     menu.classList.remove('is-open')
+
+    if(mainPage.classList.contains('main-page')) {
+      e.preventDefault() 
+    } else {
+      return
+    }
 
     let yourHeight = header.offsetHeight;
     console.log(yourHeight)
