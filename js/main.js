@@ -37,7 +37,7 @@ const header = document.querySelector('.header')
 
 for (let anchor of anchors) {
     anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+
     burger.classList.remove('is-active')
     menu.classList.remove('is-open')
 
