@@ -1230,7 +1230,7 @@ h2 {
   }
 }
 .hero__desc {
-  max-width: 730px;
+  max-width: 630px;
 }
 @media (max-width: 1023px) {
   .hero__desc {
